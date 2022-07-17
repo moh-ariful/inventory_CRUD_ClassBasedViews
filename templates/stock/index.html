@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<center><h1>Aplikasi Stok</h1></center>
+
+{% for stock in stocks %}
+<div class="card" style="width: 88rem; margin-bottom: 30px; padding-left: 155px;">
+    <div class="card-header">
+        <h3>{{ stock.title }}</h3>
+    </div>
+    <div class="card-body">
+        <small>{{ stock.date }}</small>
+      <h5 class="card-title"><strong>Jumlah: </strong>{{ stock.jumlah }}</h5>
+      <h6><strong>Harga: </strong>{{ stock.harga }}</h6>
+      <p class="card-text">{{ stock.description|truncatechars:59 }} </p>
+      <a href="{% url 'detailstock' stock.pk %}" class="btn btn-primary">More</a>
+    </div>
+  </div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

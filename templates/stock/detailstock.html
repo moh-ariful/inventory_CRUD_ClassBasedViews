@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card" style="width: 88rem; margin-bottom: 30px; padding-left: 155px;">
+    <div class="card-header">
+        <h3>{{ stock.title }}</h3>
+    </div>
+    <div class="card-body">
+        <small>{{ stock.date }}</small>
+      <h5 class="card-title"><strong>Jumlah: </strong>{{ stock.jumlah }}</h5>
+      <h6><strong>Harga: </strong>{{ stock.harga }}</h6>
+      <p class="card-text">{{ stock.description }} </p>
+      <a href="{% url 'updatestock' stock.pk %}" class="btn btn-primary">Update Stock</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
