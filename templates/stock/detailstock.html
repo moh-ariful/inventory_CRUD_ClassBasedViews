@@ -11,6 +11,9 @@
       <h6><strong>Harga: </strong>{{ stock.harga }}</h6>
       <p class="card-text">{{ stock.description }} </p>
       <a href="{% url 'updatestock' stock.pk %}" class="btn btn-primary">Update Stock</a>
+      <br>
+      <br>
+      <a href="{% url 'deletestock' stock.id %}" class="btn btn-danger">Delete this stock</a>
     </div>
   </div>
 </div>
