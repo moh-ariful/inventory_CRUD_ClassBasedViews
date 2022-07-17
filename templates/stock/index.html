@@ -4,21 +4,37 @@
 
 <center><h1>Aplikasi Stok</h1></center>
 
-{% for stock in stocks %}
-<div class="card" style="width: 88rem; margin-bottom: 30px; padding-left: 155px;">
-    <div class="card-header">
-        <h3>{{ stock.title }}</h3>
-    </div>
-    <div class="card-body">
-        <small>{{ stock.date }}</small>
-      <h5 class="card-title"><strong>Jumlah: </strong>{{ stock.jumlah }}</h5>
-      <h6><strong>Harga: </strong>{{ stock.harga }}</h6>
-      <p class="card-text">{{ stock.description|truncatechars:59 }} </p>
-      <a href="{% url 'detailstock' stock.pk %}" class="btn btn-primary">More</a>
-    </div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+          <table class="table table-bordered table-striped">
+              <thead>
+                      <tr>
+                          <th><h2>ITEM</h2></th>
+                          <th><h2>JUMLAH</th></h2>
+                          <th><h2>HARGA</th></h2>
+                          <th><h2>DESKRIPSI</th></h2>
+                      </tr>
+                      <br>
+                      <br>
+                  <tbody>
+                      {% for stock in stocks %}
+                      
+                      <tr>
+                          <td><strong>{{ stock.title }}</strong></td>
+                          <td>Jumlah: <h4><b>{{ stock.jumlah }}</h4></b></td> 
+                          <td>Harga  <h4><b>{{ stock.harga }}</h4></b></td> 
+                          <td><h4><b>{{ stock.description|truncatechars:29 }}
+                            <a href="{% url 'detailstock' stock.pk %}" class="btn btn-primary">More</a>
+                          </h4></b></td> 
+                      </tr>
+                      {% endfor %}   
+                  </tbody>
+              </thead>
+          </table>
+      </div>
   </div>
-
-{% endfor %}
+</div>
 
 </div>
 

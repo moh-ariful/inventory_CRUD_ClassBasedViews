@@ -10,7 +10,7 @@ from .models import *
 def index(request):
 
     context = {
-        'stocks': Stock.objects.all()
+        'stocks': Stock.objects.all().order_by('-pk')
     }
 
     return render(request, 'stock/index.html', context)

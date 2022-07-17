@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4bg-white border-bottom shadow-sm">
     <h5 class="my-0 mr-md-auto font-weight-normal"><a href="{% url 'index' %}" class="text-dark">Beranda</a></h5>
     <nav class="my-2 my-md-0 mr-md-3">
         {% if user.is_authenticated %}
@@ -23,11 +23,9 @@
       
       {% else %}
       <a class="p-2 text-dark" href="{% url 'login' %}">Log In</a>
+      <a class="btn btn-outline-primary" href="{% url 'signup' %}">Sign up</a>
       {% endif %}
     </nav>
-
-    <a class="btn btn-outline-primary" href="{% url 'signup' %}">Sign up</a>
-
   </div>
 
   {% block content %}
